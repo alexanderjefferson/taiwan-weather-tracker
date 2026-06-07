@@ -27,8 +27,8 @@ jobs:
       
       - name: Run forecast and actual update script
         run: |
-          python scripts/pull_forecast.py
-          python scripts/pull_actual.py
+          python scripts/pull-forecast.py
+          python scripts/pull-actual.py
 
       # 5. Commit updated CSV back to repo
       - name: Commit changes
