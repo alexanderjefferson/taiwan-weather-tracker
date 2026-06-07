@@ -19,7 +19,7 @@ df = df[df["run_date"] < df["forecast_date"]]
 
 # days ahead forecast predicted
 df["lead_time"] = (df["forecast_date"] - df["run_date"]).dt.days
-df["temp_error"] = df["high_f"] - df["high"]
+df["temp_error"] = df["high_temp"] - df["high"]
 
 skill = df.groupby("lead_time")["temp_error"].apply(lambda x: x.abs().mean())
 
