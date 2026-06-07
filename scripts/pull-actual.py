@@ -18,6 +18,7 @@ url = (
     f"&start_date={yesterday}"
     f"&end_date={yesterday}"
     "&daily=temperature_2m_max,temperature_2m_min,precipitation_sum"
+    f"&temperature_unit=fahrenheit"
     "&timezone=Asia/Taipei"
 )
 
