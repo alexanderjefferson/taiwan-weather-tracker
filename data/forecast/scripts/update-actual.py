@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import os
 
-os.makedirs("observations", exist_ok=True)
+os.makedirs("data/observations", exist_ok=True)
 
 # yesterday
 yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
@@ -30,7 +30,7 @@ df = pd.DataFrame({
     "rain": data["daily"]["precipitation_sum"]
 })
 
-file_path = "observations/daily_actual.csv"
+file_path = "data/observations/daily_actual.csv"
 
 # append instead of overwrite
 if os.path.exists(file_path):
