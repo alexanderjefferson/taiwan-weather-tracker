@@ -33,7 +33,7 @@ jobs:
       - name: Commit changes
         run: |
           git config --global user.name "alexanderjefferson"
-          git config --global user.email "github-actions@github.com"
+          git config --global user.email "173404242+alexanderjefferson@users.noreply.github.com"
           git add data/forecasts/forecasts_master.csv
           git add data/observations/daily_actual.csv
           git commit -m "daily forecast update" || echo "No changes to commit"
