@@ -7,8 +7,8 @@ st.set_page_config(page_title="Taiwan Weather Tracker", layout="wide")
 # -----------------------
 # Load data
 # -----------------------
-forecast = pd.read_csv("data/forecast/forecasts/forecasts_master.csv")
-actual = pd.read_csv("data/forecast/observations/daily_actual.csv")
+forecast = pd.read_csv("data/forecasts/forecasts_master.csv")
+actual = pd.read_csv("data/observations/daily_actual.csv")
 historical_files = "data/historical/"
 
 forecast["forecast_date"] = pd.to_datetime(forecast["forecast_date"])
@@ -29,7 +29,7 @@ df = df[df["run_date"] < df["forecast_date"]]
 df["lead_time"] = (df["forecast_date"] - df["run_date"]).dt.days
 
 df["temp_error"] = df["high_temp"] - df["high"]
-df["rain_error"] = df["rain"] - df["rain"]
+df["rain_error"] = df["prain"] - df["rain"]
 
 # -----------------------
 # Sidebar filters
@@ -105,7 +105,7 @@ with tab3:
     hist["date"] = pd.to_datetime(hist["date"])
     hist["month_day"] = hist["date"].dt.strftime("%m-%d")
 
-    daily_avg = hist.groupby("month_day")["high_f"].mean()
+    daily_avg = hist.groupby("month_day")["high_temp"].mean()
 
     fig, ax = plt.subplots()
     daily_avg.plot(ax=ax)

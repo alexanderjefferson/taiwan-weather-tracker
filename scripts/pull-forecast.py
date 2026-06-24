@@ -23,7 +23,7 @@ df = pd.DataFrame({
     "run_date": run_date,
     "high_temp": data["daily"]["temperature_2m_max"],
     "low_temp": data["daily"]["temperature_2m_min"],
-    "rain": data["daily"]["precipitation_sum"]
+    "prain": data["daily"]["precipitation_sum"]
 })
 
 file = "data/forecasts/forecasts_master.csv"

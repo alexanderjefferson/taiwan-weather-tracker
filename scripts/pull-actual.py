@@ -26,8 +26,8 @@ data = requests.get(url).json()
 
 df = pd.DataFrame({
     "date": data["daily"]["time"],
-    "high_temp": data["daily"]["temperature_2m_max"],
-    "low_temp": data["daily"]["temperature_2m_min"],
+    "high": data["daily"]["temperature_2m_max"],
+    "low": data["daily"]["temperature_2m_min"],
     "rain": data["daily"]["precipitation_sum"]
 })
 
